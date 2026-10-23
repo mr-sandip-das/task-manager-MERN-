@@ -2,8 +2,10 @@
 import React, { useState } from "react";
 import "../assets/style/AddUser.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function AddUser() {
+  let navigate=useNavigate();
   const [name,setName]=useState("");
   const [email,setEmail]=useState("");
   const [password,setPassword]=useState("");
@@ -14,6 +16,8 @@ function AddUser() {
      setEmail("");
      setName("");
      setPassword("");
+
+     navigate("/");
       
   }
   return (

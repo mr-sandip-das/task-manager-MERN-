@@ -3,19 +3,37 @@ import React from "react";
 import "../assets/style/UserTable.css";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { useEffect } from "react";
 
 function UserTable() {
+
+// ------- FETCH USER CODE -------- //
 
   const [data1,setData]=useState([]);
 
   const CullectData=async ()=>{
     let {data}=await axios.get("http://localhost:2000/user/user-data");
     setData(data.data);
-    console.log(data1);
-    
+      // console.log(data1, "data"); have confutuion 
   }
-  CullectData();
+
+  useEffect(()=>{
+    CullectData();
+  },[]);
+    // console.log(data1, "data"); have confutuion  
+
+
+// ------- DELETE USER CODE -------- //
+
+
+ function deleteUser(id){
+  console.log(id);
+ }
+  
+
+ 
   return (
+    
     <div className="user-table-page">
       <div className="user-table-container">
         <h1>User List</h1>
@@ -33,16 +51,24 @@ function UserTable() {
           </thead>
 
           <tbody>
-            <tr>
-              <td>1</td>
-              <td>Sandip Das</td>
-              <td>sandip@example.com</td>
-              <td>••••••••</td>
-              <td>
+              {
+                data1.map((element,index)=>{
+                    return(
+                     <tr> 
+                    <td>{index+1}</td>
+                    <td>{element.name}</td>
+                    <td>{element.email}</td>
+                    <td>{element.password}</td>
+                    <td>
                 <button className="edit-btn">Edit</button>
-                <button className="delete-btn">Delete</button>
+                <button className="delete-btn" onClick={()=>deleteUser(element._id)}>Delete</button>
               </td>
-            </tr>
+                    </tr>
+                  )
+                })
+              }
+            
+              
           </tbody>
         </table>
       </div>
