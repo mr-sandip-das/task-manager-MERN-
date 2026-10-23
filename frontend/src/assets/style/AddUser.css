@@ -1,0 +1,91 @@
+
+.add-user-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: #f4f6fb;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.add-user-card {
+  width: 100%;
+  max-width: 430px;
+  padding: 38px;
+  border: 1px solid #e8ebf3;
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 15px 45px rgba(32, 48, 85, 0.09);
+}
+
+.add-user-card h1 {
+  margin: 0 0 30px;
+  color: #202b45;
+  font-size: 30px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: -0.7px;
+}
+
+.add-user-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.add-user-form input {
+  width: 100%;
+  height: 52px;
+  padding: 0 16px;
+  border: 1px solid #dce2ed;
+  border-radius: 9px;
+  outline: none;
+  background: #fafbfe;
+  color: #202b45;
+  font-family: inherit;
+  font-size: 14px;
+  box-sizing: border-box;
+  transition: 0.25s ease;
+}
+
+.add-user-form input::placeholder {
+  color: #98a2b3;
+}
+
+.add-user-form input:focus {
+  border-color: #5274e8;
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(82, 116, 232, 0.12);
+}
+
+.add-user-form button {
+  height: 52px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 9px;
+  background: linear-gradient(135deg, #5a7bf0, #405bd0);
+  color: #ffffff;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 15px rgba(64, 91, 208, 0.2);
+  transition: 0.25s ease;
+}
+
+.add-user-form button:hover {
+  transform: translateY(-2px);
+  background: linear-gradient(135deg, #496be6, #344fc2);
+  box-shadow: 0 9px 20px rgba(64, 91, 208, 0.27);
+}
+
+@media (max-width: 480px) {
+  .add-user-card {
+    padding: 28px 22px;
+  }
+
+  .add-user-card h1 {
+    font-size: 26px;
+  }
+}

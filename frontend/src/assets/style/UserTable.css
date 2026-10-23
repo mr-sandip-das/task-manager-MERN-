@@ -1,0 +1,92 @@
+
+.user-table-page {
+  min-height: 100vh;
+  padding: 40px 24px;
+  background: #f4f6fb;
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.user-table-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 30px;
+  border: 1px solid #e7eaf1;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 10px 30px rgba(32, 48, 85, 0.06);
+}
+
+.user-table-container h1 {
+  margin: 0 0 25px;
+  color: #202b45;
+  font-size: 28px;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.user-table thead {
+  background: #f0f3fb;
+}
+
+.user-table th,
+.user-table td {
+  padding: 16px;
+  border-bottom: 1px solid #e9edf4;
+  font-size: 14px;
+}
+
+.user-table th {
+  color: #46536b;
+  font-weight: 700;
+}
+
+.user-table td {
+  color: #606d82;
+}
+
+.user-table tbody tr:hover {
+  background: #f9faff;
+}
+
+.user-table button {
+  margin-right: 8px;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background: #e7edff;
+  color: #3658c9;
+}
+
+.edit-btn:hover {
+  background: #d5e0ff;
+}
+
+.delete-btn {
+  background: #ffebeb;
+  color: #d63e48;
+}
+
+.delete-btn:hover {
+  background: #ffdddd;
+}
+
+@media (max-width: 600px) {
+  .user-table-container {
+    overflow-x: auto;
+    padding: 18px;
+  }
+
+  .user-table {
+    min-width: 600px;
+  }
+}
