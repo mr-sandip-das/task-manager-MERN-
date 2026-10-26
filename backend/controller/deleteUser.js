@@ -7,9 +7,8 @@ async function DeleteUser(req,resp) {
    _id:new ObjectId(id)
  });
 
- 
  resp.status(200).json({
-    message:"fvjgkuhi"
+    message:"Data Deleted Sucessfully"
  })
  
 }

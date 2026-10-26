@@ -28,7 +28,6 @@ function UserTable() {
 
   async function deleteUser(id) {
     const de = await axios.delete(`http://localhost:2000/user/detete/${id}`);
-    console.log("asdasdas", de);
     setData(data1.filter((u) => u._id !== id));
   }
 
