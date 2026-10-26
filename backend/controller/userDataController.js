@@ -6,5 +6,8 @@ resp.status(200).json({
     "data":data
 });
 
+
+
+
 }
 export default userDataController;

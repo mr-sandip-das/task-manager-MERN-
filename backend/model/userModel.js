@@ -4,5 +4,9 @@ async function userModel(obj) {
 
     const collection=db.collection("users");
     const result=await collection.insertOne(obj);
+
+    
+
+
 };
 export default userModel;

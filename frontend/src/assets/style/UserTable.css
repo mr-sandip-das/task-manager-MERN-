@@ -90,3 +90,46 @@
     min-width: 600px;
   }
 }
+
+
+
+/* ADD USER BUTTON */
+.user-table-container > a {
+  display: inline-block;
+  margin-bottom: 22px;
+  text-decoration: none;
+}
+
+.user-table-container > a button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(135deg, #4361ee, #3658c9);
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(67, 97, 238, 0.25);
+  transition: all 0.25s ease;
+}
+
+.user-table-container > a button:hover {
+  background: linear-gradient(135deg, #3658c9, #2946ad);
+  box-shadow: 0 7px 18px rgba(67, 97, 238, 0.35);
+  transform: translateY(-2px);
+}
+
+.user-table-container > a button:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(67, 97, 238, 0.2);
+}
+
+.user-table-container > a button:focus-visible {
+  outline: 3px solid #a5b4fc;
+  outline-offset: 3px;
+}

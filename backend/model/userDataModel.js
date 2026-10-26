@@ -1,10 +1,7 @@
 import { MongoClient } from "mongodb";
+import dbConnection from "../db/db.js";
 async function userDataModel(){
-    const dbName="college";
-    const url="mongodb://localhost:27017";
-    const client=new MongoClient(url);
-    await client.connect();
-    const db=client.db(dbName);
+    const db=await dbConnection()
     const collection=db.collection("users");
     const result=await collection.find().toArray();
     return result;

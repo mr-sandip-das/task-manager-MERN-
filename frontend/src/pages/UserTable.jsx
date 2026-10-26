@@ -7,37 +7,41 @@ import { useEffect } from "react";
 
 function UserTable() {
 
-// ------- FETCH USER CODE -------- //
+  // ------- FETCH USER CODE -------- //
 
-  const [data1,setData]=useState([]);
+  const [data1, setData] = useState([]);
 
-  const CullectData=async ()=>{
-    let {data}=await axios.get("http://localhost:2000/user/user-data");
+  const CullectData = async () => {
+    let { data } = await axios.get("http://localhost:2000/user/user-data");
     setData(data.data);
-      // console.log(data1, "data"); have confutuion 
+    // console.log(data1, "data"); have confutuion 
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     CullectData();
-  },[]);
-    // console.log(data1, "data"); have confutuion  
+  }, []);
+  // console.log(data1, "data"); have confutuion  
 
 
-// ------- DELETE USER CODE -------- //
+  // ------- DELETE USER CODE -------- //
 
 
- function deleteUser(id){
-  console.log(id);
- }
-  
+  async function deleteUser(id) {
+    const de = await axios.delete(`http://localhost:2000/user/detete/${id}`);
+    console.log("asdasdas", de);
+    setData(data1.filter((u) => u._id !== id));
+  }
 
- 
+
+
   return (
-    
+
     <div className="user-table-page">
       <div className="user-table-container">
         <h1>User List</h1>
-        <Link to="/add-user"><button>ADD User</button></Link>
+        <Link to="/add-user">
+          <button>ADD User</button>
+        </Link>
 
         <table className="user-table">
           <thead>
@@ -51,24 +55,24 @@ function UserTable() {
           </thead>
 
           <tbody>
-              {
-                data1.map((element,index)=>{
-                    return(
-                     <tr> 
-                    <td>{index+1}</td>
+            {
+              data1.map((element, index) => {
+                return (
+                  <tr>
+                    <td>{index + 1}</td>
                     <td>{element.name}</td>
                     <td>{element.email}</td>
                     <td>{element.password}</td>
                     <td>
-                <button className="edit-btn">Edit</button>
-                <button className="delete-btn" onClick={()=>deleteUser(element._id)}>Delete</button>
-              </td>
-                    </tr>
-                  )
-                })
-              }
-            
-              
+                      <button className="edit-btn">Edit</button>
+                      <button className="delete-btn" onClick={() => deleteUser(element._id)}>Delete</button>
+                    </td>
+                  </tr>
+                )
+              })
+            }
+
+
           </tbody>
         </table>
       </div>
